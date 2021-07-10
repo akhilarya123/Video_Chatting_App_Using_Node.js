@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+	<style>
+	body, html {
+			height: 100%;
+			width:100%;
+			margin: 0;
+			padding: 0;
+			border: 0;
+		}
+	
+	
+	#myVideo {
+	  position: fixed;
+	  right: 0;
+	  bottom: 0;
+	  min-width: 100%;
+	  min-height: 100%;
+	  z-index :1;
+	}
+	#websiteLink{
+	z-index:5;
+	position:absolute;
+	background:transparent;
+	font-size:25px;
+	border :none;
+		
+		margin-top: 250px ;
+		width: 100%;
+		text-align:center;
+	}
+	button:focus{
+	outline:0;
+	}
+	a{
+	color:#09a3e6;
+	text-decoration: none;
+	}
+	a:hover{
+	color:yellow;
+	}
+	p { margin:0 }
+	
+	
+	</style>
+</head>
+<body>
+
+	<button id="websiteLink" type="button"><a href="https://boiling-stream-07604.herokuapp.com/">
+	
+	<p>Click Here To Visit</p>
+	<p>The Webpage</p>
+	
+	</a></button>
+	<video autoplay muted loop id="myVideo">
+		<source src="vid2.mp4" type="video/mp4">
+	</video>
+
+    
+	
+</body>
+</html>
