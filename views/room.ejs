@@ -13,7 +13,7 @@
 	
 	
 	function link_copied(){
-		const required_id="http://localhost:3000/"+ROOM_ID;
+		const required_id=document.URL;
 		alert("link copied to clipboard");
 		let inputElement=document.createElement('input');
 		inputElement.setAttribute('value',required_id);
@@ -78,7 +78,7 @@
 			</div>
 			<div class="control_buttons_set">
 			
-			<div class="complete_button" id="share-screen" >
+			<div class="complete_button not_working" id="share-screen" >
 					<i class="fas fa-arrow-circle-up"></i>
 					<span>Share Screen</span>
 			</div>
@@ -88,7 +88,7 @@
 				<span>Chats</span>
 			</div>
 			
-			<div class="complete_button" >
+			<div class="complete_button not_working" >
 				<i class="fas fa-user-friends"></i>
 				<span>Participants</span>
 			</div>
@@ -122,7 +122,8 @@
 		<div id="chat-box">
 		<div class="chat_box_header" style="
 		font-size:150%;
-		background-color:pink;
+		background-color:#146e69;
+		
 		text-align:center;
 		height:5%;
 		
@@ -133,7 +134,7 @@
 		 <div class="chat_window" style="
 		 
 		 flex-grow:1;
-		 background-color:yellow;
+		 background-image:linear-gradient(to bottom, #364de3, #37b0ed);
 		 height: 86%;
 		 
 		 ">
