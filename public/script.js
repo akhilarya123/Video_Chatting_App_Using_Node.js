@@ -2,13 +2,17 @@ const socket=io('/');
 const videoGrid = document.getElementById('video-grid');
 
 
-//const myPeer= new Peer({host:'peerjs-server.herokuapp.com', secure:true, port:443});
+const myPeer= new Peer({host:'peerjs-server.herokuapp.com', secure:true, port:443});
 
-const myPeer = new Peer(undefined, {
+/*const myPeer = new Peer(undefined, {
   host: '/',
-  port: '443'
+  port: '443',
+  secure:true,
+  path: '/peerjs'
   
 })
+*/
+
 
 const myVideo = document.createElement('video')
 myVideo.muted = true
@@ -43,7 +47,7 @@ navigator.mediaDevices.getUserMedia({
 	let text=$('input');
 	$('html').keydown((e)=>{
 		if (e.which == 13 && text.val().length !== 0) {
-		  console.log(text.val());
+		  //console.log(text.val());
 		  text.val(fix_message(text.val()));
 		  socket.emit('message', text.val());
 		  text.val('')
@@ -54,6 +58,7 @@ navigator.mediaDevices.getUserMedia({
 	socket.on('createMessage',message=>{
 		//console.log('This is server message',message);
 		$("ul").append(`<p></p><li class="message">${message}</li>`);
+		$("ul").append(`<br>`);
 		scrollCorrection();
 	})
 
@@ -93,6 +98,8 @@ function scrollCorrection(){
   var d = $('.chat_window');
   d.scrollTop(d.prop("scrollHeight"));
 }
+
+
 
 
 function muteUnmute(){
