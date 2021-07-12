@@ -148,6 +148,7 @@ function setStopVideo(){
   document.querySelector('.video_button').innerHTML = html;
 }
 
+
 function setPlayVideo(){
   const html = `
   <i class="stop fas fa-video-slash"></i>
